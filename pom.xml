@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>coding-style</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>coding-style</name>
+  <parent>
+    <groupId>com.kohlschutter</groupId>
+    <artifactId>kohlschutter-parent</artifactId>
+    <version>1.0</version>
+    <relativePath>../kohlschutter-parent/pom.xml</relativePath>
+  </parent>
+  <inceptionYear>2014</inceptionYear>
+  <description>Code conventions for Kohlschütter projects.</description>
+  <url>https://github.com/kohlschutter/coding-style</url>
+  <organization>
+    <name>Kohlschütter Search Intelligence</name>
+    <url>https://www.kohlschutter.com/</url>
+  </organization>
+  <developers>
+    <developer>
+      <name>Christian Kohlschütter</name>
+      <email>christian@kohlschutter.com</email>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>scm:git:https://github.com/kohlschutter/coding-style</url>
+    <developerConnection>scm:git:https://github.com/kohlschutter/coding-style</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/kohlschutter/coding-style/issues</url>
+  </issueManagement>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+    <file.encoding>UTF-8</file.encoding>
+    <maven.compile.encoding>UTF-8</maven.compile.encoding>
+  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.5.2</version>
+        <configuration>
+          <descriptors>
+            <descriptor>assembly.xml</descriptor>
+          </descriptors>
+          <formats>
+            <format>zip</format>
+          </formats>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

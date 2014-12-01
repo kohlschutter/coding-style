@@ -1,0 +1,10 @@
+.project
+.settings
+.classpath
+target
+.DS_Store
+dependency-reduced-pom.xml
+*~
+*~~
+pom.xml.releaseBackup
+/release.properties
