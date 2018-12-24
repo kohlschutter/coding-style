@@ -7,11 +7,14 @@
 <!--
     Checkstyle-Configuration: Kohlschütter Checks
     Description: 
-Checkstyle configurartion that checks the Google coding conventions (https://google-styleguide.googlecode.com/svn-history/r130/trunk/javaguide.html).
+Checkstyle configuration loosely based on Google coding conventions (https://google-styleguide.googlecode.com/svn-history/r130/trunk/javaguide.html).
 -->
 <module name="Checker">
   <property name="severity" value="warning"/>
   <property name="charset" value="UTF-8"/>
+  <module name="BeforeExecutionExclusionFileFilter">
+    <property name="fileNamePattern" value="module\-info\.java$"/>
+  </module>
   <module name="TreeWalker">
     <module name="OuterTypeFilename"/>
     <module name="IllegalTokenText">
@@ -39,9 +42,7 @@ Checkstyle configurartion that checks the Google coding conventions (https://goo
     </module>
     <module name="NeedBraces"/>
     <module name="LeftCurly">
-      <property name="maxLineLength" value="100"/>
     </module>
-    <module name="RightCurly"/>
     <module name="RightCurly">
       <property name="option" value="alone"/>
       <property name="tokens" value="CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT"/>
@@ -85,11 +86,11 @@ Checkstyle configurartion that checks the Google coding conventions (https://goo
       <message key="name.invalidPattern" value="Member name ''{0}'' must match pattern ''{1}''."/>
     </module>
     <module name="ParameterName">
-      <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9]*$"/>
+      <property name="format" value="^([a-z][a-z0-9][a-zA-Z0-9]*|qName|c)$"/>
       <message key="name.invalidPattern" value="Parameter name ''{0}'' must match pattern ''{1}''."/>
     </module>
     <module name="LocalVariableName">
-      <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9]*$"/>
+      <property name="format" value="^[a-z]([a-z0-9][a-zA-Z0-9]*)?$"/>
       <property name="allowOneCharVarInForLoop" value="true"/>
       <property name="tokens" value="VARIABLE_DEF"/>
       <message key="name.invalidPattern" value="Local variable name ''{0}'' must match pattern ''{1}''."/>
