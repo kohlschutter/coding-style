@@ -15,7 +15,10 @@ Checkstyle configuration loosely based on Google coding conventions (https://goo
   <module name="BeforeExecutionExclusionFileFilter">
     <property name="fileNamePattern" value="module\-info\.java$"/>
   </module>
+  
+  <module name="SuppressWarningsFilter" />
   <module name="TreeWalker">
+    <module name="SuppressWarningsHolder" />
     <module name="OuterTypeFilename"/>
     <module name="IllegalTokenText">
       <property name="tokens" value="STRING_LITERAL, CHAR_LITERAL"/>
@@ -41,12 +44,6 @@ Checkstyle configuration loosely based on Google coding conventions (https://goo
       <property name="tokens" value="LITERAL_TRY,LITERAL_CATCH,LITERAL_FINALLY,LITERAL_IF,LITERAL_ELSE,LITERAL_SWITCH"/>
     </module>
     <module name="NeedBraces"/>
-    <module name="LeftCurly">
-    </module>
-    <module name="RightCurly">
-      <property name="option" value="alone"/>
-      <property name="tokens" value="CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT"/>
-    </module>
     <module name="WhitespaceAround">
       <property name="allowEmptyConstructors" value="true"/>
       <property name="allowEmptyMethods" value="true"/>
@@ -86,11 +83,11 @@ Checkstyle configuration loosely based on Google coding conventions (https://goo
       <message key="name.invalidPattern" value="Member name ''{0}'' must match pattern ''{1}''."/>
     </module>
     <module name="ParameterName">
-      <property name="format" value="^([a-z][a-z0-9][a-zA-Z0-9]*|qName|c)$"/>
+      <property name="format" value="^([a-z][a-z0-9][a-zA-Z0-9]*|qName|[a-z])$"/>
       <message key="name.invalidPattern" value="Parameter name ''{0}'' must match pattern ''{1}''."/>
     </module>
     <module name="LocalVariableName">
-      <property name="format" value="^[a-z]([a-z0-9][a-zA-Z0-9]*)?$"/>
+      <property name="format" value="^(([a-z]([a-z0-9][a-zA-Z0-9]*)?)|n[A-Z][a-zA-Z0-9]{2,})$"/>
       <property name="allowOneCharVarInForLoop" value="true"/>
       <property name="tokens" value="VARIABLE_DEF"/>
       <message key="name.invalidPattern" value="Local variable name ''{0}'' must match pattern ''{1}''."/>
@@ -110,11 +107,14 @@ Checkstyle configuration loosely based on Google coding conventions (https://goo
       <message key="ws.preceded" value="GenericWhitespace ''{0}'' is preceded with whitespace."/>
       <message key="ws.illegalFollow" value="GenericWhitespace ''{0}'' should followed by whitespace."/>
     </module>
+    <!-- 
     <module name="Indentation">
       <property name="basicOffset" value="2"/>
       <property name="caseIndent" value="2"/>
       <property name="arrayInitIndent" value="2"/>
     </module>
+    -->
+    
     <module name="AbbreviationAsWordInName">
       <property name="severity" value="ignore"/>
       <property name="allowedAbbreviationLength" value="1"/>
