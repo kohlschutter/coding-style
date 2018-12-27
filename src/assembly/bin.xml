@@ -9,6 +9,8 @@
       <useDefaultExcludes>true</useDefaultExcludes>
       <includes>
         <include>eclipse/**</include>
+        <include>LICENSE</include>
+        <include>README.md</include>
       </includes>
       <excludes>
         <exclude>eclipse/*.sh</exclude>
