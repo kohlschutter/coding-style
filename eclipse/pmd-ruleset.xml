@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  name="Default Maven PMD Plugin Ruleset"
+  xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+  <description>
+    Da rulez
+  </description>
+  <rule ref="category/java/bestpractices.xml">
+    <exclude name="AvoidReassigningParameters" />
+    <exclude name="JUnitTestsShouldIncludeAssert" />
+    <exclude name="UseVarargs" />
+    <exclude name="JUnitUseExpected" />
+    <exclude name="JUnitAssertionsShouldIncludeMessage" />
+    <!-- new in 6.11.0 <exclude name="ForLoopVariableCount" /> -->
+
+    <!-- False positives in for-declaration -->
+    <exclude name="OneDeclarationPerLine" />
+
+    <!-- Too obvious; when we use it, it's in demo/test code -->
+    <exclude name="AvoidPrintStackTrace" />
+    <exclude name="SystemPrintln" />
+  </rule>
+  <rule
+    ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts">
+    <properties>
+      <property name="maximumAsserts" value="10" />
+    </properties>
+  </rule>
+  <rule ref="category/java/codestyle.xml">
+    <exclude name="UselessParentheses" />
+    <exclude name="OnlyOneReturn" />
+    <exclude name="ConfusingTernary" />
+    <exclude name="UnnecessaryLocalBeforeReturn" />
+    <exclude name="DefaultPackage" />
+    <exclude name="CommentDefaultAccessModifier" />
+    <exclude name="AtLeastOneConstructor" />
+    <exclude name="ShortVariable" />
+    <exclude name="AvoidFinalLocalVariable" />
+    <exclude name="EmptyMethodInAbstractClassShouldBeAbstract" />
+    <exclude name="MethodArgumentCouldBeFinal" />
+    <exclude name="LocalVariableCouldBeFinal" />
+    <exclude name="AvoidUsingNativeCode" />
+    <exclude name="UselessQualifiedThis" />
+    <exclude name="UnnecessaryConstructor" />
+
+    <!-- erroneously ignores the fact that a method in the assignment can
+      throw an exception -->
+    <exclude name="PrematureDeclaration" />
+  </rule>
+  <rule ref="category/java/codestyle.xml/ClassNamingConventions">
+    <properties>
+      <property name="utilityClassPattern"
+        value="[A-Z][a-zA-Z0-9]*" />
+    </properties>
+  </rule>
+  <rule
+    ref="category/java/codestyle.xml/UseUnderscoresInNumericLiterals">
+    <properties>
+      <property name="acceptableDecimalLength" value="6" />
+    </properties>
+  </rule>
+  <rule ref="category/java/codestyle.xml/LongVariable">
+    <properties>
+      <property name="minimum" value="32" />
+    </properties>
+  </rule>
+
+  <rule ref="category/java/design.xml">
+    <exclude name="CollapsibleIfStatements" />
+    <exclude name="LawOfDemeter" />
+    <exclude name="SignatureDeclareThrowsException" />
+    <exclude name="TooManyMethods" />
+    <exclude name="DataClass" />
+    <exclude name="AvoidCatchingGenericException" />
+    <exclude name="AvoidRethrowingException" />
+    <exclude name="UseUtilityClass" />
+    <exclude name="UseObjectForClearerAPI" />
+    <exclude name="GodClass" />
+    <exclude name="LoosePackageCoupling" />
+  </rule>
+  <rule ref="category/java/design.xml/AvoidDeeplyNestedIfStmts">
+    <properties>
+      <property name="problemDepth" value="6" />
+    </properties>
+  </rule>
+  <rule ref="category/java/design.xml/TooManyFields">
+    <properties>
+      <property name="maxfields" value="25" />
+    </properties>
+  </rule>
+  <rule ref="category/java/design.xml/CyclomaticComplexity">
+    <properties>
+      <property name="methodReportLevel" value="20" />
+    </properties>
+  </rule>
+  <rule ref="category/java/design.xml/NPathComplexity">
+    <properties>
+      <property name="reportLevel" value="2000" />
+    </properties>
+  </rule>
+
+  <rule ref="category/java/errorprone.xml">
+    <exclude name="BeanMembersShouldSerialize" />
+    <exclude name="DataflowAnomalyAnalysis" />
+    <exclude name="AssignmentInOperand" />
+    <exclude name="NullAssignment" />
+    <exclude name="TestClassWithoutTestCases" />
+    <exclude name="AvoidCatchingNPE" />
+    <exclude name="NonStaticInitializer" />
+    <exclude name="SingleMethodSingleton" />
+    <exclude name="SingletonClassReturningNewInstance" />
+    <exclude name="EmptyIfStmt" />
+    <exclude name="EmptyWhileStmt" />
+    <exclude name="MissingStaticMethodInNonInstantiatableClass" />
+    <exclude name="AvoidDuplicateLiterals" />
+    <exclude name="AvoidLiteralsInIfCondition" />
+
+    <!-- handled by the compiler already; ignores @SuppressWarnings("resource") -->
+    <exclude name="CloseResource" />
+  </rule>
+  <rule ref="category/java/errorprone.xml/EmptyCatchBlock">
+    <properties>
+      <property name="allowCommentedBlocks" value="true" />
+    </properties>
+  </rule>
+
+  <rule ref="category/java/multithreading.xml">
+    <exclude name="AvoidUsingVolatile" />
+    <exclude name="AvoidSynchronizedAtMethodLevel" />
+    <exclude name="UseConcurrentHashMap" />
+    <exclude name="DoNotUseThreads" />
+  </rule>
+
+  <rule ref="category/java/performance.xml">
+    <exclude name="AvoidFileStream" />
+    <exclude name="AvoidInstantiatingObjectsInLoops" />
+    <exclude name="UseStringBufferForStringAppends" />
+
+    <!-- .startsWith() should not be replaced with charAt(0), what about
+      empty strings! -->
+    <exclude name="SimplifyStartsWith" />
+
+    <!-- Premature optimization -->
+    <exclude name="RedundantFieldInitializer" />
+    <exclude name="InsufficientStringBufferDeclaration" />
+    <exclude name="ConsecutiveAppendsShouldReuse" />
+  </rule>
+  <rule
+    ref="category/java/performance.xml/TooFewBranchesForASwitchStatement">
+    <properties>
+      <property name="minimumNumberCaseForASwitch" value="2" />
+    </properties>
+  </rule>
+
+  <rule ref="category/java/security.xml" />
+
+  <rule ref="category/java/documentation.xml">
+    <exclude name="CommentRequired" />
+    <exclude name="UncommentedEmptyConstructor" />
+    <exclude name="UncommentedEmptyMethodBody" />
+  </rule>
+  <rule ref="category/java/documentation.xml/CommentSize">
+    <properties>
+      <property name="maxLines" value="20" />
+      <property name="maxLineLength" value="120" />
+    </properties>
+  </rule>
+</ruleset>
