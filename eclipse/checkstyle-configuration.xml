@@ -32,10 +32,6 @@ Checkstyle configuration loosely based on Google coding conventions (https://goo
       <property name="allowNonPrintableEscapes" value="true"/>
       <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
     </module>
-    <module name="LineLength">
-      <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
-      <property name="max" value="120"/>
-    </module>
     <module name="AvoidStarImport"/>
     <module name="OneTopLevelClass"/>
     <module name="NoLineWrap"/>
@@ -157,14 +153,12 @@ Checkstyle configuration loosely based on Google coding conventions (https://goo
       <property name="tagOrder" value="@param, @return, @throws, @deprecated"/>
     </module>
     <module name="JavadocMethod">
-      <property name="minLineCount" value="2"/>
       <property name="allowedAnnotations" value="Override, Test"/>
       <property name="scope" value="public"/>
       <property name="allowThrowsTagsForSubclasses" value="true"/>
       <property name="allowMissingParamTags" value="true"/>
       <property name="allowMissingThrowsTags" value="true"/>
       <property name="allowMissingReturnTag" value="true"/>
-      <property name="allowMissingJavadoc" value="true"/>
     </module>
     <module name="MethodName">
       <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9_]*$"/>
@@ -175,6 +169,11 @@ Checkstyle configuration loosely based on Google coding conventions (https://goo
       <property name="ignoreModifiers" value="true"/>
     </module>
   </module>
+  <module name="LineLength">
+    <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+    <property name="max" value="120"/>
+  </module>
+
   <module name="FileTabCharacter">
     <property name="eachLine" value="true"/>
   </module>
