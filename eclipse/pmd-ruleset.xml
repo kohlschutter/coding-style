@@ -20,6 +20,8 @@
     <!-- Too obvious; when we use it, it's in demo/test code -->
     <exclude name="AvoidPrintStackTrace" />
     <exclude name="SystemPrintln" />
+
+    <exclude name="AccessorMethodGeneration" />
   </rule>
   <rule
     ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts">
@@ -62,7 +64,7 @@
   </rule>
   <rule ref="category/java/codestyle.xml/LongVariable">
     <properties>
-      <property name="minimum" value="32" />
+      <property name="minimum" value="40" />
     </properties>
   </rule>
 
