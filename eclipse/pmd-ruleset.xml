@@ -50,6 +50,14 @@
       throw an exception -->
     <exclude name="PrematureDeclaration" />
   </rule>
+
+  <!-- jUnit 5 adds several static imports -->
+  <rule ref="category/java/codestyle.xml/TooManyStaticImports">
+  <properties>
+       <property name="maximumStaticImports" value="12" />
+  </properties>
+  </rule>
+
   <rule ref="category/java/codestyle.xml/ClassNamingConventions">
     <properties>
       <property name="utilityClassPattern"
