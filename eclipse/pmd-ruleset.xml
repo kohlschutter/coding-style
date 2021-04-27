@@ -58,6 +58,12 @@
   </properties>
   </rule>
 
+  <rule ref="category/java/design.xml/ExcessiveImports">
+    <properties>
+        <property name="minimum" value="50.0" />
+    </properties>
+  </rule>
+
   <rule ref="category/java/codestyle.xml/ClassNamingConventions">
     <properties>
       <property name="utilityClassPattern"
