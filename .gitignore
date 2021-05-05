@@ -6,6 +6,7 @@ target
 dependency-reduced-pom.xml
 *~
 *~~
+.*.swp
 pom.xml.releaseBackup
 /release.properties
 /.pmd
