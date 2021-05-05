@@ -12,7 +12,7 @@
     <exclude name="UseVarargs" />
     <exclude name="JUnitUseExpected" />
     <exclude name="JUnitAssertionsShouldIncludeMessage" />
-    <!-- new in 6.11.0 <exclude name="ForLoopVariableCount" /> -->
+    <exclude name="ForLoopVariableCount" />
 
     <!-- False positives in for-declaration -->
     <exclude name="OneDeclarationPerLine" />
@@ -94,6 +94,7 @@
     <exclude name="UseObjectForClearerAPI" />
     <exclude name="GodClass" />
     <exclude name="LoosePackageCoupling" />
+    <exclude name="AvoidUncheckedExceptionsInSignatures" />
   </rule>
   <rule ref="category/java/design.xml/AvoidDeeplyNestedIfStmts">
     <properties>
@@ -179,7 +180,7 @@
   </rule>
   <rule ref="category/java/documentation.xml/CommentSize">
     <properties>
-      <property name="maxLines" value="20" />
+      <property name="maxLines" value="100" />
       <property name="maxLineLength" value="120" />
     </properties>
   </rule>
