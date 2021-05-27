@@ -26,7 +26,7 @@
   <rule
     ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts">
     <properties>
-      <property name="maximumAsserts" value="10" />
+      <property name="maximumAsserts" value="20" />
     </properties>
   </rule>
   <rule ref="category/java/codestyle.xml">
