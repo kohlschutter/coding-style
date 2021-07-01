@@ -22,6 +22,9 @@
     <exclude name="SystemPrintln" />
 
     <exclude name="AccessorMethodGeneration" />
+
+    <!-- Blocked on https://issues.apache.org/jira/browse/SUREFIRE-1909 -->
+    <exclude name="JUnit5TestShouldBePackagePrivate" />
   </rule>
   <rule
     ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts">
@@ -53,14 +56,14 @@
 
   <!-- jUnit 5 adds several static imports -->
   <rule ref="category/java/codestyle.xml/TooManyStaticImports">
-  <properties>
-       <property name="maximumStaticImports" value="12" />
-  </properties>
+    <properties>
+      <property name="maximumStaticImports" value="12" />
+    </properties>
   </rule>
 
   <rule ref="category/java/design.xml/ExcessiveImports">
     <properties>
-        <property name="minimum" value="50.0" />
+      <property name="minimum" value="50.0" />
     </properties>
   </rule>
 
@@ -95,6 +98,11 @@
     <exclude name="GodClass" />
     <exclude name="LoosePackageCoupling" />
     <exclude name="AvoidUncheckedExceptionsInSignatures" />
+  </rule>
+  <rule ref="category/java/design.xml/CognitiveComplexity">
+    <properties>
+      <property name="reportLevel" value="21" />
+    </properties>
   </rule>
   <rule ref="category/java/design.xml/AvoidDeeplyNestedIfStmts">
     <properties>
