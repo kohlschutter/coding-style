@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<FindBugsFilter>
+<FindBugsFilter
+  xmlns="https://github.com/spotbugs/filter/3.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://github.com/spotbugs/filter/3.0.0 https://raw.githubusercontent.com/spotbugs/spotbugs/4.7.0/spotbugs/etc/findbugsfilter.xsd">
   <Match>
-    <!-- Workaround for https://github.com/spotbugs/spotbugs/issues/756: 
+    <!-- Workaround for https://github.com/spotbugs/spotbugs/issues/756:
       try with resources with Java 11 triggers RCN warnings -->
     <Bug pattern="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE" />
   </Match>
@@ -9,5 +12,12 @@
     <!-- These bugs should be handled by the java compiler -->
     <Bug pattern="DLS_DEAD_LOCAL_STORE" />
   </Match>
-  
+  <Match>
+    <!-- Too many false positives, not very useful -->
+    <Bug pattern="THROWS_METHOD_THROWS_CLAUSE_BASIC_EXCEPTION" />
+  </Match>
+  <Match>
+    <!-- Too many false positives when unit testing -->
+    <Bug pattern="THROWS_METHOD_THROWS_CLAUSE_THROWABLE" />
+  </Match>
 </FindBugsFilter>
