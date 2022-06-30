@@ -48,6 +48,7 @@
     <exclude name="AvoidUsingNativeCode" />
     <exclude name="UselessQualifiedThis" />
     <exclude name="UnnecessaryConstructor" />
+    <exclude name="EmptyControlStatement" />
 
     <!-- erroneously ignores the fact that a method in the assignment can
       throw an exception -->
