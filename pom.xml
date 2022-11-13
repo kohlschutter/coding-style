@@ -3,13 +3,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>coding-style</artifactId>
-  <version>1.2.8</version>
+  <version>1.2.9-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>coding-style</name>
   <parent>
     <groupId>com.kohlschutter</groupId>
     <artifactId>kohlschutter-parent</artifactId>
-    <version>1.4.6</version>
+    <version>1.5.2-SNAPSHOT</version>
     <relativePath>../kohlschutter-parent/pom.xml</relativePath>
   </parent>
   <inceptionYear>2014</inceptionYear>
