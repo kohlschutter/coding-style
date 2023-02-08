@@ -128,6 +128,7 @@
   </rule>
 
   <rule ref="category/java/errorprone.xml">
+    <exclude name="BeanMembersShouldSerialize" />
     <exclude name="DataflowAnomalyAnalysis" />
     <exclude name="AssignmentInOperand" />
     <exclude name="NullAssignment" />
