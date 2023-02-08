@@ -3,7 +3,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>coding-style</artifactId>
-  <version>1.2.9-SNAPSHOT</version>
+  <version>1.2.9</version>
   <packaging>pom</packaging>
   <name>coding-style</name>
   <parent>
@@ -34,8 +34,8 @@
   </licenses>
   <scm>
     <url>scm:git:https://github.com/kohlschutter/coding-style</url>
+    <connection>scm:git:https://github.com/kohlschutter/coding-style</connection>
     <developerConnection>scm:git:https://github.com/kohlschutter/coding-style</developerConnection>
-    <tag>HEAD</tag>
   </scm>
   <distributionManagement>
     <snapshotRepository>
