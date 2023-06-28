@@ -21,6 +21,7 @@
     <exclude name="AvoidPrintStackTrace" />
     <exclude name="SystemPrintln" />
 
+    <exclude name="AccessorClassGeneration" />
     <exclude name="AccessorMethodGeneration" />
 
     <!-- Blocked on https://issues.apache.org/jira/browse/SUREFIRE-1909 -->
@@ -37,11 +38,9 @@
     <exclude name="OnlyOneReturn" />
     <exclude name="ConfusingTernary" />
     <exclude name="UnnecessaryLocalBeforeReturn" />
-    <exclude name="DefaultPackage" />
     <exclude name="CommentDefaultAccessModifier" />
     <exclude name="AtLeastOneConstructor" />
     <exclude name="ShortVariable" />
-    <exclude name="AvoidFinalLocalVariable" />
     <exclude name="EmptyMethodInAbstractClassShouldBeAbstract" />
     <exclude name="MethodArgumentCouldBeFinal" />
     <exclude name="LocalVariableCouldBeFinal" />
@@ -49,6 +48,17 @@
     <exclude name="UselessQualifiedThis" />
     <exclude name="UnnecessaryConstructor" />
     <exclude name="EmptyControlStatement" />
+
+    <!-- Fully qualified names sometimes make code more readable -->
+    <exclude name="UnnecessaryFullyQualifiedName" />
+
+    <!-- Some returns may make the code more readable -->
+    <exclude name="UnnecessaryReturn" />
+
+    <!-- Only makes sense if you're targeting Java 9+ -->
+    <exclude name="UseDiamondOperator" />
+    <exclude name="UnnecessaryCast" />
+
 
     <!-- erroneously ignores the fact that a method in the assignment can
       throw an exception -->
@@ -64,7 +74,7 @@
 
   <rule ref="category/java/design.xml/ExcessiveImports">
     <properties>
-      <property name="minimum" value="50.0" />
+      <property name="minimum" value="50" />
     </properties>
   </rule>
 
@@ -99,6 +109,7 @@
     <exclude name="GodClass" />
     <exclude name="LoosePackageCoupling" />
     <exclude name="AvoidUncheckedExceptionsInSignatures" />
+    <exclude name="SimplifyBooleanReturns" />
   </rule>
   <rule ref="category/java/design.xml/CognitiveComplexity">
     <properties>
@@ -128,7 +139,6 @@
   </rule>
 
   <rule ref="category/java/errorprone.xml">
-    <exclude name="DataflowAnomalyAnalysis" />
     <exclude name="AssignmentInOperand" />
     <exclude name="NullAssignment" />
     <exclude name="TestClassWithoutTestCases" />
@@ -162,10 +172,6 @@
     <exclude name="AvoidFileStream" />
     <exclude name="AvoidInstantiatingObjectsInLoops" />
     <exclude name="UseStringBufferForStringAppends" />
-
-    <!-- .startsWith() should not be replaced with charAt(0), what about
-      empty strings! -->
-    <exclude name="SimplifyStartsWith" />
 
     <!-- Premature optimization -->
     <exclude name="RedundantFieldInitializer" />
