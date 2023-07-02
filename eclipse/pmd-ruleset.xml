@@ -4,7 +4,7 @@
   name="Kohlschutter Maven PMD Plugin Ruleset"
   xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
   <description>
-    Da rulez
+    Da Rules
   </description>
   <rule ref="category/java/bestpractices.xml">
     <exclude name="AvoidReassigningParameters" />
@@ -26,6 +26,9 @@
 
     <!-- Blocked on https://issues.apache.org/jira/browse/SUREFIRE-1909 -->
     <exclude name="JUnit5TestShouldBePackagePrivate" />
+
+    <!-- https://github.com/pmd/pmd/issues/4618 and https://github.com/pmd/pmd/issues/4617 -->
+    <exclude name="UnusedAssignment" /><!-- FIXME: Fix upcoming; already works with PMD 7 branch ck/dev -->
   </rule>
   <rule
     ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts">
@@ -56,13 +59,18 @@
     <exclude name="UnnecessaryReturn" />
 
     <!-- Only makes sense if you're targeting Java 9+ -->
+    <!-- https://github.com/pmd/pmd/issues/4619 -->
     <exclude name="UseDiamondOperator" />
+
+    <!-- https://github.com/pmd/pmd/issues/4613 -->
+    <exclude name="UnnecessaryImport" />
+
+    <!-- https://github.com/pmd/pmd/issues/4620 -->
     <exclude name="UnnecessaryCast" />
 
-
     <!-- erroneously ignores the fact that a method in the assignment can
-      throw an exception -->
-    <exclude name="PrematureDeclaration" />
+    throw an exception -->
+    <exclude name="PrematureDeclaration" /> <!-- FIXME: Fixed in PMD 7 -->
   </rule>
 
   <!-- jUnit 5 adds several static imports -->
