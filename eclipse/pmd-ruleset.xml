@@ -154,8 +154,6 @@
     <exclude name="NonStaticInitializer" />
     <exclude name="SingleMethodSingleton" />
     <exclude name="SingletonClassReturningNewInstance" />
-    <exclude name="EmptyIfStmt" />
-    <exclude name="EmptyWhileStmt" />
     <exclude name="MissingStaticMethodInNonInstantiatableClass" />
     <exclude name="AvoidDuplicateLiterals" />
     <exclude name="AvoidLiteralsInIfCondition" />
