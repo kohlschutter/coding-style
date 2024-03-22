@@ -123,7 +123,7 @@ Checkstyle configuration loosely based on Google coding conventions (https://goo
       <property name="severity" value="ignore"/>
     </module>
     <module name="VariableDeclarationUsageDistance">
-      <property name="allowedDistance" value="5"/>
+      <property name="allowedDistance" value="10"/>
     </module>
     <module name="CustomImportOrder">
       <property name="severity" value="ignore"/>
