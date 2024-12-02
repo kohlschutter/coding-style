@@ -8,10 +8,10 @@
   </description>
   <rule ref="category/java/bestpractices.xml">
     <exclude name="AvoidReassigningParameters" />
-    <exclude name="JUnitTestsShouldIncludeAssert" />
+    <exclude name="UnitTestShouldIncludeAssert" />
     <exclude name="UseVarargs" />
     <exclude name="JUnitUseExpected" />
-    <exclude name="JUnitAssertionsShouldIncludeMessage" />
+    <exclude name="UnitTestAssertionsShouldIncludeMessage" />
     <exclude name="ForLoopVariableCount" />
 
     <!-- False positives in for-declaration -->
@@ -31,7 +31,7 @@
     <exclude name="UnusedAssignment" /><!-- FIXME: Fix upcoming; already works with PMD 7 branch ck/dev -->
   </rule>
   <rule
-    ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts">
+    ref="category/java/bestpractices.xml/UnitTestContainsTooManyAsserts">
     <properties>
       <property name="maximumAsserts" value="20" />
     </properties>
@@ -172,6 +172,7 @@
     <exclude name="AvoidSynchronizedAtMethodLevel" />
     <exclude name="UseConcurrentHashMap" />
     <exclude name="DoNotUseThreads" />
+    <exclude name="AvoidSynchronizedStatement" /><!-- To be solved with JEP 491 -->
   </rule>
 
   <rule ref="category/java/performance.xml">
@@ -185,7 +186,7 @@
     <exclude name="ConsecutiveAppendsShouldReuse" />
   </rule>
   <rule
-    ref="category/java/performance.xml/TooFewBranchesForASwitchStatement">
+    ref="category/java/performance.xml/TooFewBranchesForSwitch">
     <properties>
       <property name="minimumNumberCaseForASwitch" value="2" />
     </properties>
