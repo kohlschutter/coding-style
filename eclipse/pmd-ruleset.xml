@@ -71,6 +71,8 @@
     <!-- erroneously ignores the fact that a method in the assignment can
     throw an exception -->
     <exclude name="PrematureDeclaration" /> <!-- FIXME: Fixed in PMD 7 -->
+
+    <exclude name="LambdaCanBeMethodReference" />
   </rule>
 
   <!-- jUnit 5 adds several static imports -->
