@@ -9,6 +9,18 @@
     <Bug pattern="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE" />
   </Match>
   <Match>
+    <!-- Reduce busywork upon spotbugs update -->
+    <Bug pattern="US_USELESS_SUPPRESSION_ON_CLASS" />
+  </Match>
+  <Match>
+    <!-- Reduce busywork upon spotbugs update -->
+    <Bug pattern="US_USELESS_SUPPRESSION_ON_METHOD" />
+  </Match>
+  <Match>
+    <!-- Reduce busywork upon spotbugs update -->
+    <Bug pattern="US_USELESS_SUPPRESSION_ON_PACKAGE" />
+  </Match>
+  <Match>
     <!-- These bugs should be handled by the java compiler -->
     <Bug pattern="DLS_DEAD_LOCAL_STORE" />
   </Match>

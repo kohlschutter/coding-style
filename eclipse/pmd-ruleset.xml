@@ -14,6 +14,9 @@
     <exclude name="UnitTestAssertionsShouldIncludeMessage" />
     <exclude name="ForLoopVariableCount" />
 
+    <!-- too much busywork when upgrading PMD ... -->
+    <exclude name="UnnecessaryWarningSuppression" />
+
     <!-- https://github.com/pmd/pmd/issues/5670 -->
     <exclude name="ExhaustiveSwitchHasDefault" />
 
