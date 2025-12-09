@@ -10,7 +10,7 @@
     <parent>
         <groupId>com.kohlschutter</groupId>
         <artifactId>kohlschutter-parent</artifactId>
-        <version>1.8.2</version>
+        <version>1.8.3</version>
         <relativePath>../kohlschutter-parent/pom.xml</relativePath>
     </parent>
     <inceptionYear>2014</inceptionYear>
