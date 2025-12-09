@@ -32,4 +32,8 @@
     <!-- Too many false positives when unit testing -->
     <Bug pattern="THROWS_METHOD_THROWS_CLAUSE_THROWABLE" />
   </Match>
+  <Match>
+    <!-- Nothing we can do about DocumentBuilder.parse issue in maven plugin HelpMojo -->
+    <Class name="~.*plugin.HelpMojo" />
+  </Match>
 </FindBugsFilter>

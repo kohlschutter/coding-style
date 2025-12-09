@@ -35,6 +35,8 @@
 
     <!-- https://github.com/pmd/pmd/issues/4618 and https://github.com/pmd/pmd/issues/4617 -->
     <exclude name="UnusedAssignment" /><!-- FIXME: Fix upcoming; already works with PMD 7 branch ck/dev -->
+
+    <exclude name="EnumComparison" /><!-- bad advice when refactoring code to a non-enum type -->
   </rule>
   <rule
     ref="category/java/bestpractices.xml/UnitTestContainsTooManyAsserts">
@@ -79,6 +81,8 @@
     <exclude name="PrematureDeclaration" /> <!-- FIXME: Fixed in PMD 7 -->
 
     <exclude name="LambdaCanBeMethodReference" />
+
+    <exclude name="VariableCanBeInlined" /> <!-- taste, semantics -->
   </rule>
 
   <!-- jUnit 5 adds several static imports -->
@@ -168,6 +172,8 @@
 
     <!-- handled by the compiler already; ignores @SuppressWarnings("resource") -->
     <exclude name="CloseResource" />
+
+    <exclude name="AvoidCatchingGenericException" />
   </rule>
   <rule ref="category/java/errorprone.xml/EmptyCatchBlock">
     <properties>
